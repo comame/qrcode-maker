@@ -16,6 +16,11 @@ const App: React.FC = () =>{
         })
         setDataURI(code)
     }
+    const onClick = (e: React.MouseEvent) => {
+        if (dataURI == '') {
+            e.preventDefault()
+        }
+    }
 
     const backgroundColorRef = useRef<HTMLInputElement>(null)
     const mainColorRef = useRef<HTMLInputElement>(null)
@@ -35,7 +40,7 @@ const App: React.FC = () =>{
             <input type='color' onInput={ onChange } ref={ backgroundColorRef } defaultValue='#ffffff'></input>
         </label>
         <img src={ dataURI }></img>
-        <a download={ dataURI } href={ dataURI }>ダウンロードする</a>
+        <a download={ dataURI } href={ dataURI } onClick={ onClick } data-disabled={ dataURI === '' }>ダウンロードする</a>
     </div>
 }
 
