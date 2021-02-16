@@ -34,7 +34,7 @@ const App: React.FC = () =>{
             QR コードの背景色
             <input type='color' onInput={ onChange } ref={ backgroundColorRef } defaultValue='#ffffff'></input>
         </label>
-        <img src={ dataURI }></img>
+        <a download={ dataURI } href={ dataURI }><img src={ dataURI }></img></a>
     </div>
 }
 
