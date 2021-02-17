@@ -22,15 +22,15 @@ const App: React.FC = () =>{
     const messageRef = useRef<HTMLInputElement>(null)
 
     return <div>
-        <label>
+        <label className='url-input'>
             URL
             <input onInput={ onChange } ref={ messageRef }></input>
         </label>
-        <label>
+        <label className='main-color-input'>
             QR コードの色
             <input type='color' onInput={ onChange } ref={ mainColorRef }></input>
         </label>
-        <label>
+        <label className='background-color-input'>
             QR コードの背景色
             <input type='color' onInput={ onChange } ref={ backgroundColorRef } defaultValue='#ffffff'></input>
         </label>
