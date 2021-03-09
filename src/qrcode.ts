@@ -7,8 +7,8 @@ export async function generateDataURIQRCode(message: string, color: {
     return new Promise((resolve) => {
         qrcode.toDataURL(message, {
             color: {
-                dark: color.background + 'ff',
-                light: color.main + 'ff'
+                dark: color.main + 'ff',
+                light: color.background + 'ff'
             },
             margin: 2
         }, (err, url) => {
